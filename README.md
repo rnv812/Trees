@@ -1,5 +1,7 @@
 # Python implementations of different types of trees
 ## Includes
-- Binary Search Tree
+- Binary search tree;
+- Full binary tree algorithm;
+- Complete binary tree algorithm;
 
 ![](media/bst_demo.png)
