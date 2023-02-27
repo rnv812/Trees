@@ -1,12 +1,11 @@
 from typing import List, Optional
 from random import randint
+from binary_tree import BinaryTreeNode, BinaryTree
 
 
-class BSTNode:
+class BSTNode(BinaryTreeNode):
     def __init__(self, value: int) -> None:
-        self.value = value
-        self.left = None
-        self.right = None
+        super().__init__(value)
         self.parent = None
 
     def __str__(self) -> str:
@@ -37,9 +36,9 @@ class BSTNode:
             return node.parent
 
 
-class BinarySearchTree:
+class BinarySearchTree(BinaryTree):
     def __init__(self) -> None:
-        self.root = None
+        super().__init__()
 
     @staticmethod
     def _find_node(node: BSTNode, value: int) -> Optional[BSTNode]:
@@ -76,6 +75,8 @@ class BinarySearchTree:
         if node.left is None or node.right is None:
             child = node.left or node.right
             if node.parent is None:
+                if child is not None:
+                    child.parent = None
                 tree.root = child
             else:
                 if node == node.parent.left:
@@ -132,7 +133,7 @@ class BinarySearchTree:
 
 def main():
     tree = BinarySearchTree()
-    values = [randint(-10, 10) for _ in range(10)]
+    values = [randint(-10, 10) for _ in range(2)]
     print('Random values:', values)
 
     for value in values:
