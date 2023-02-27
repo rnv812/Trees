@@ -72,8 +72,19 @@ class BinarySearchTree:
             inorder_traversal(node.right)
 
         inorder_traversal(self.root)
-
         return values
+    
+    def min(self) -> int:
+        node = self.root
+        while node.left:
+            node = node.left
+        return node.value
+
+    def max(self) -> int:
+        node = self.root
+        while node.right:
+            node = node.right
+        return node.value
 
 
 def main():
@@ -88,6 +99,9 @@ def main():
     
     print('Predecessor of root:', tree.root.get_predecessor().value)
     print('Successor of root:', tree.root.get_successor().value)
+
+    print('Min:', tree.min())
+    print('Max:', tree.max())
 
 
 if __name__ == '__main__':
