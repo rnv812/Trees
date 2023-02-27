@@ -3,5 +3,3 @@
 - Binary search tree;
 - Full binary tree algorithm;
 - Complete binary tree algorithm;
-
-![](media/bst_demo.png)
