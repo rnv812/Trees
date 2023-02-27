@@ -2,4 +2,4 @@
 ## Includes
 - Binary Search Tree
 
-![](media/demo.png)
+![](media/bst_demo.png)
